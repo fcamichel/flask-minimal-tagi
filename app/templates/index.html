@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Neuigkeiten</h1>
+    <article>
+    {% for post in posts %}
+      <div>
+        <h2><a href="/get/{{ post.id|split }}">{{ post.title }}</a></h2>
+        <p>{{ post.published|datetime }}</p>
+        <p>{{ post.summary}}</p>
+      </div>
+    {% endfor %}
+    </article>
+{% endblock %}
