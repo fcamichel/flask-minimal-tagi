@@ -1,7 +1,7 @@
 import feedparser
 import requests
 from requests_html import HTMLSession
-from flask import render_template, flash, redirect, url_for
+from flask import render_template, flash, redirect, url_for, request
 from app import app
 
 
