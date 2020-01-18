@@ -18,4 +18,8 @@ def get(post_id):
     session = HTMLSession()
     r = session.get('https://tagesanzeiger.ch/'+str(post_id))
     article = r.html.find('#article', first=True)
+    if article == None:
+        # not supported on repl.it
+        r.html.render()
+        article = r.html.find('#app', first=True)
     return render_template('article.html', title='Artikel', article_html=article.html)
